@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="payment.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+<body>
+
+
+  <header>
+  <nav class="navbar">
+     <h2>Delicious Bistro</h2>
+
+
+    <!-- Search Input -->
+    <!-- <div class="search-container">
+      <input type="search" id="searchInput" placeholder="Search food..." oninput="debouncedSearch()"/>
+      <button onclick="searchFood()">🔍</button>
+        <div id="searchResults" class="search-results-dropdown"></div>
+    </div> -->
+
+  
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"  class="nav-link">Home</a></li>
+        <li><a href="#about"  class="nav-link">About</a></li>
+        <li><a href="#chefs"  class="nav-link">Chefs</a></li>
+        <li><a href="#menu"  class="nav-link">Menu</a></li>
+        <li><a href="#gallery"  class="nav-link">Gallery</a></li>
+        <li><a href="reservation.html"  class="nav-link">Reserve</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li>  <a href="#cart" id="cart-toggle"  class="nav-link">🛒 Cart</a></li>
+
+    </ul>
+   
+  </nav>
+</header>
+
+
+  <div class="payment-container">
+    <h2 style="text-align:center;">💳 Make a Payment</h2>
+
+    <div class="tabs">
+      <div class="tab active" data-tab="card">Card</div>
+      <div class="tab" data-tab="upi">UPI</div>
+      <div class="tab" data-tab="wallet">Wallet</div>
+    </div>
+
+    <div id="card" class="tab-content active">
+      <form id="cardForm">
+        <div class="form-group">
+          <label>Cardholder Name</label>
+          <input type="text" id="cardName" required />
+        </div>
+        <div class="form-group">
+          <label>Card Number</label>
+          <input type="text" id="cardNumber" maxlength="19" required />
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label>Expiry</label>
+            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required />
+          </div>
+          <div class="form-group">
+            <label>CVV</label>
+            <input type="password" id="cvv" maxlength="4" required />
+          </div>
+        </div>
+        <div class="total-display">Total: ₹<span id="totalAmount">0</span></div>
+        <button type="submit" class="pay-btn" onclick="completePayment()">Pay Now</button>
+      </form>
+    </div>
+
+    <div id="upi" class="tab-content">
+      <div class="upi-options">
+        <button onclick="paySuccess('UPI - Google Pay'),completePayment()" >Google Pay</button>
+        <button onclick="paySuccess('UPI - PhonePe'),completePayment()">PhonePe</button>
+        <button onclick="paySuccess('UPI - Paytm'),completePayment()">Paytm</button>
+      </div>
+    </div>
+
+    <div id="wallet" class="tab-content">
+      <div class="upi-options">
+        <button onclick="paySuccess('Wallet - Amazon Pay'),completePayment()">Amazon Pay</button>
+        <button onclick="paySuccess('Wallet - PayPal'),completePayment()">PayPal</button>
+        <button onclick="paySuccess('Wallet - Mobikwik'),completePayment()">Mobikwik</button>
+      </div>
+    </div>
+
+    <div id="success" class="success-message">
+      <h3>✅ Payment Successful!</h3>
+      <p>Thanks for your order. Receipt is downloading...</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>Delicious Bistro</h3>
+        <p>Experience gourmet meals crafted with passion and served with elegance. Join us for unforgettable dining.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#chefs">Chefs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+        <p><i class="fas fa-envelope"></i> contact@deliciousbistro.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Cityville</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Delicious Bistro. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="payment.js"></script>
+
+  
+
+</body>
+</html>

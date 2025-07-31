@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- SEO: Search Engine Optimization -->
+  <meta name="title" content="Delicious Bistro - Fine Dining Experience" />
+  <meta name="description" content="Order your favorite meals online from DeliciousBite - a modern food restaurant with a rich menu and seamless cart experience." />
+  <meta name="keywords" content="food, restaurant, online food order, DeliciousBite, burger, pizza, Indian food, fast food,Delicious Bistro - Fine Dining Experience" />
+  <meta name="author" content="ARUKALA RAJU GOUD" />
+  <meta name="robots" content="index, follow" />
+
+   <!-- Open Graph / Facebook Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsiteurl.com/" />
+  <meta property="og:title" content="Delicious Bistro - Fine Dining Experience" />
+  <meta property="og:description" content="Explore the menu, add to cart, and enjoy fast checkout on our modern food ordering website." />
+  <meta property="og:image" content="https://yourwebsiteurl.com/assets/https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg" />
+
+  <!-- Twitter Sharing -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://yourwebsiteurl.com/" />
+  <meta property="twitter:title" content="Delicious Bistro - Fine Dining Experience" />
+  <meta property="twitter:description" content="Delicious food delivered fast. Try our beautiful modern restaurant web app." />
+  <meta property="twitter:image" content="https://yourwebsiteurl.com/assets/https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg" />
+
+
+
+
+  <title>Delicious Bistro - Fine Dining Experience</title>
+  <link rel="stylesheet" href="index/style.css"/>
+  <link rel="stylesheet" href="cart/cart.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- website webicon  -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg">
+<link rel="manifest" href="https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg">
+
+
+</head>
+<body>
+
+  <!-- Preloader Start -->
+<div id="preloader">
+  <div class="loader-content">
+    <img src="https://static.vecteezy.com/system/resources/previews/055/128/169/non_2x/modern-restaurant-logo-design-incorporating-stylish-typography-and-food-themed-graphics-for-business-identity-free-vector.jpg" alt="Restaurant Logo" class="loader-logo" />
+    <div class="spinner"></div>
+    <p class="loading-text">Serving delicious experience...</p>
+  </div>
+</div>
+<!-- Preloader End -->
+
+
+  <header>
+  <nav class="navbar">
+     <h2>Delicious Bistro</h2>
+
+
+    <!-- Search Input -->
+    <div class="search-container">
+      <input type="search" id="searchInput" placeholder="Search food..." oninput="debouncedSearch()"/>
+      <button onclick="searchFood()">🔍</button>
+        <div id="searchResults" class="search-results-dropdown"></div>
+    </div>
+
+  
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"  class="nav-link">Home</a></li>
+        <li><a href="#about"  class="nav-link">About</a></li>
+        <li><a href="#chefs"  class="nav-link">Chefs</a></li>
+        <li><a href="#menu"  class="nav-link">Menu</a></li>
+        <li><a href="#gallery"  class="nav-link">Gallery</a></li>
+        <li><a href="reservation/reservation.html"  class="nav-link">Reserve</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li>  <a href="#cart" id="cart-toggle"  class="nav-link">🛒 Cart</a></li>
+
+    </ul>
+   
+  </nav>
+</header>
+
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Welcome to Delicious Bistro</h2>
+      <p>Experience the finest dining with exquisite flavors.</p>
+      <a href="reservation.html" class="btn">Reserve a Table</a>
+    </div>
+  </section>
+
+<section id="about" class="section about-section">
+  <h2>About Delicious Bistro</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>At <strong>Delicious Bistro</strong>, we believe dining is more than just eating — it's an experience. Nestled in the heart of the city, our restaurant offers a perfect blend of ambiance, culinary innovation, and warm hospitality.</p>
+      <p>Our award-winning chefs use only the freshest local and seasonal ingredients to craft a menu that brings together global flavors with an artistic touch. Whether you're here for a romantic evening, a family dinner, or a business lunch, we’re committed to making every meal memorable.</p>
+      <p>From elegant fine dining to comfort food reimagined, Gourmet Haven serves moments as rich as the dishes we prepare.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1729394405518-eaf2a0203aa7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fDB8fHww" alt="Restaurant Interior">
+    </div>
+  </div>
+</section>
+
+
+
+<section id="chefs" class="section chefs-section">
+  <h2 data-aos="fade-up" data-aos-duration="1000">Meet Our Master Chefs</h2>
+  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Culinary artists behind your every unforgettable bite.</p>
+
+  <div class="chefs-container">
+    <div class="chef-card" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hlZnxlbnwwfHwwfHx8MA%3D%3D" alt="Chef Antonio">
+      <h3>Chef Antonio Rossi</h3>
+      <p>Michelin-Starred Italian Maestro</p>
+    </div>
+
+    <div class="chef-card" data-aos="zoom-in" data-aos-delay="300">
+      <img src="https://plus.unsplash.com/premium_photo-1687697860916-b05b982decbc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNoZWZ8ZW58MHx8MHx8fDA%3D" alt="Chef Mei Ling">
+      <h3>Chef Mei Ling</h3>
+      <p>Asian Fusion Innovator</p>
+    </div>
+
+    <div class="chef-card" data-aos="zoom-in" data-aos-delay="400">
+      <img src="https://media.istockphoto.com/id/2213060113/photo/chef-decorating-a-plate-while-cooking-in-a-commercial-kitchen.webp?a=1&b=1&s=612x612&w=0&k=20&c=qaidVkrqKyH8M3wwjjttYuWaRly06_s_BcGVC9rofDI=" alt="Chef James Oliver">
+      <h3>Chef James Oliver</h3>
+      <p>Farm-to-Table Specialist</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="menu" class="section menu-section">
+  <h2 data-aos="fade-up" data-aos-duration="1000">Our Signature Menu</h2>
+  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+    Crafted with love by our world-class chefs
+  </p>
+
+  <div class="menu-categories">
+    <button class="menu-filter active" onclick="filterMenu('all')">All</button>
+    <button class="menu-filter" onclick="filterMenu('starters')">Starters</button>
+    <button class="menu-filter" onclick="filterMenu('main')">Main Course</button>
+    <button class="menu-filter" onclick="filterMenu('dessert')">Desserts</button>
+  </div>
+
+  <div class="menu-items">
+
+    <div class="menu-item" data-category="starters" data-aos="fade-up" data-aos-delay="200"  data-id="1" data-name="Bruschetta" data-price="220" data-image="images/Bruschetta.avif">
+      <img src="images/Bruschetta.avif" alt="Bruschetta">
+      <div class="menu-info">
+        <h3>Bruschetta</h3>
+         <div class="rating">★★★★☆<span>(4)</span></div>
+        <p>Toasted bread with tomatoes, garlic & herbs</p>
+        <span>₹220</span><br>
+        <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="menu-item" data-category="main" data-aos="fade-up" data-aos-delay="300" data-id="2" data-name="Grilled Ribeye Steak" data-price="320" data-image="images/Grilled Ribeye Steak.avif">
+      <img src="images/Grilled Ribeye Steak.avif" alt="Grilled Ribeye Steak">
+      <div class="menu-info">
+        <h3>Grilled Ribeye Steak</h3>
+         <div class="rating">★★★★★<span>(5)</span></div>
+        <p>Served with garlic butter and roasted veggies</p>
+        <span>₹320</span><br>
+        <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="menu-item" data-category="dessert" data-aos="fade-up" data-aos-delay="400" data-id="3" data-name="Classic Tiramisu" data-price="180" data-image="images/Classic Tiramisu.jpg">
+      <img src="images/Classic Tiramisu.jpg" alt="Classic Tiramisu">
+      <div class="menu-info">
+        <h3>Classic Tiramisu</h3>
+         <div class="rating">★★★★☆ <span>(4)</span></div>
+        <p>Espresso-soaked ladyfingers & mascarpone cream</p>
+        <span>₹180</span><br>
+        <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+
+    <!-- Starter -->
+<div class="menu-item" data-category="starters" data-aos="fade-up" data-aos-delay="500" data-id="4" data-name="Stuffed Mushrooms" data-price="340" data-image="images/Stuffed Mushrooms.jpg">
+  <img src="images/Stuffed Mushrooms.jpg" alt="Stuffed Mushrooms">
+  <div class="menu-info">
+    <h3>Stuffed Mushrooms</h3>
+     <div class="rating">★★★★☆ <span>(4)</span></div>
+    <p>Cheesy baked mushrooms with garlic and herbs</p>
+    <span>₹340</span><br>
+    <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+<!-- Main Course -->
+<div class="menu-item" data-category="main" data-aos="fade-up" data-aos-delay="600" data-id="5" data-name="Fettuccine Alfredo" data-price="480" data-image="images/Fettuccine Alfredo.jpg">
+  <img src="images/Fettuccine Alfredo.jpg" alt="Fettuccine Alfredo">
+  <div class="menu-info">
+    <h3>Fettuccine Alfredo</h3>
+     <div class="rating">★★★★☆ <span>(4)</span></div>
+    <p>Creamy Alfredo sauce with parmesan and fresh parsley</p>
+    <span>₹480</span><br>
+    <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+<!-- Dessert -->
+<div class="menu-item" data-category="dessert" data-aos="fade-up" data-aos-delay="650" data-id="6" data-name="New York Cheesecake" data-price="520" data-image="images/New York Cheesecake.jpg">
+  <img src="images/New York Cheesecake.jpg" alt="New York Cheesecake">
+  <div class="menu-info">
+    <h3>New York Cheesecake</h3>
+     <div class="rating">★★★★★ <span>(5)</span></div>
+    <p>Rich and creamy with a graham cracker crust</p>
+    <span>₹520</span><br>
+    <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+<!-- Drink -->
+<div class="menu-item" data-category="drinks" data-aos="fade-up" data-aos-delay="700" data-id="7" data-name="Mint Mojito" data-price="280" data-image="images/Mint Mojito.jpg">
+  <img src="images/Mint Mojito.jpg" alt="Mint Mojito">
+  <div class="menu-info">
+    <h3>Mint Mojito</h3>
+     <div class="rating">★★★★☆ <span>(4)</span></div>
+    <p>Refreshing lime, mint, and soda cocktail</p>
+    <span>₹280</span><br>
+    <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+<!-- Main Course -->
+<div class="menu-item" data-category="main" data-aos="fade-up" data-aos-delay="800" data-id="8" data-name="Pan-Seared Salmon" data-price="230" data-image="images/Pan-Seared Salmon.jpg">
+  <img src="images/Pan-Seared Salmon.jpg" alt="Pan-Seared Salmon">
+  <div class="menu-info">
+    <h3>Pan-Seared Salmon</h3>
+     <div class="rating">★★★★☆<span>(4)</span></div>
+    <p>Fresh Atlantic salmon with lemon dill sauce</p>
+    <span>₹230</span><br>
+    <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+<!-- Starter -->
+<div class="menu-item" data-category="starters" data-aos="fade-up" data-aos-delay="900" data-id="9" data-name="Veg Spring Rolls" data-price="590" data-image="images/Veg Spring Rolls.jpg">
+  <img src="images/Veg Spring Rolls.jpg" alt="Veg Spring Rolls">
+  <div class="menu-info">
+    <h3>Veg Spring Rolls</h3>
+     <div class="rating">★★★☆☆ <span>(3)</span></div>
+    <p>Crispy rolls with seasonal vegetables & sweet chili dip</p>
+    <span>₹590</span><br>
+    <button onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+
+    <!-- Add more dishes as needed -->
+  </div>
+</section> 
+
+<!-- gallery section  -->
+<section id="gallery" class="gallery-section video-gallery-bg">
+
+  <video autoplay muted loop playsinline class="gallery-bg-video">
+    <source src="https://media.istockphoto.com/id/2151417056/video/a-woman-is-decorating-cupcakes-with-sprinkles-and-icing.mp4?b=1&s=192_srp&k=20&c=QBhKnNgBQsaiY_t47nyHxiHckiJjw-YZA4gRDhW-2Pw=" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+<div class="gallery-overlay-content">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Our Gallery</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      A glimpse into our 5-star culinary experience
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://media.istockphoto.com/id/2160314332/photo/table-setting-for-event-catering-wedding-table-empty-glasses.jpg?s=612x612&w=0&k=20&c=4fLIsbSW__as6BKFDR-6gNlILhGhwiPnqYXcbHBshQg=" alt="Fine Dining Setup">
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://media.istockphoto.com/id/1219591609/photo/overhead-photo-of-businessman-working-at-a-round-table.jpg?s=612x612&w=0&k=20&c=kdNR8MhxaM_8hx8xIF_jJs4C2nu4aBj4hF_ll0LjfSY=" alt="Signature Dish">
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://media.istockphoto.com/id/139885298/photo/baked-goods.jpg?s=612x612&w=0&k=20&c=jCRsN7QOZ8Lh2SWP_uVy-2ydi1mF2jZzA-i44EilGNM=" alt="Dessert Platter">
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+        <img src="https://media.istockphoto.com/id/478432824/photo/fashion-stylish-restaurant-interior.jpg?s=612x612&w=0&k=20&c=yQYd7sKTQStX2eooeFxSues53aBR_9CGWmcKh15LGe8=" alt="Restaurant Interior">
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+        <img src="https://media.istockphoto.com/id/1162911786/photo/the-team-of-cooks-backs-in-the-work-in-the-modern-kitchen-the-workflow-of-the-restaurant-in.jpg?s=612x612&w=0&k=20&c=Nn1xO1gbUGnEzTHp4Sitg_ouob_co3jY5hDv_kHWzxE=" alt="Chef at Work">
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
+        <img src="https://media.istockphoto.com/id/137737392/photo/chef-preparing-dish-in-kitchen.jpg?s=612x612&w=0&k=20&c=JO7ZfCewtP4NhBqixWVgotrcnIJbQyAWkBOWT-xZrNY=" alt="Gourmet Plating">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      We’d love to hear from you. Fill out the form below and we’ll get back to you shortly.
+    </p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your full name" required />
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+        <label for="phone">Contact Number</label>
+        <input type="tel" id="phone" placeholder="+1234567890" required />
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group" data-aos="fade-up" data-aos-delay="500">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Subject" required />
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group full-width" data-aos="fade-up" data-aos-delay="600">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message..." required></textarea>
+        <small class="error-message"></small>
+      </div>
+
+      <div class="form-group full-width" data-aos="fade-up" data-aos-delay="700">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>Delicious Bistro</h3>
+        <p>Experience gourmet meals crafted with passion and served with elegance. Join us for unforgettable dining.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#chefs">Chefs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+        <p><i class="fas fa-envelope"></i> contact@deliciousbistro.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Cityville</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Delicious Bistro. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Slide-in Cart Drawer -->
+<div id="cart-drawer" class="cart-drawer">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button id="close-cart" class="close-btn">&times;</button>
+  </div>
+  <div id="cart-items">
+    <!-- Cart items will appear here -->
+  </div>
+  <div class="cart-summary">
+    <p>Subtotal:<span id="subtotal">₹0</span></p>
+    <p>Discount (10%):<span id="discount"> ₹0</span></p>
+    <!-- <p><strong>Total:<span id="total">₹0</span></strong></p> -->
+    <!-- <div class="total-display">Total: ₹<span id="totalAmount">0</span></div> -->
+    <div class="total-display">
+        <strong>Total Amount:</strong>₹<span id="total">0</span>
+   </div>
+
+  </div>
+  <!-- total display -->
+
+  <!-- pyment button  -->
+<div class="checkout-container">
+  <!-- <button class="checkout-btn" onclick="window.location.href='payment/payment.html'">
+    <i class="fas fa-credit-card"></i> Proceed to Payment
+  </button> -->
+
+  <button class="checkout-btn" onclick="proceedToPayment()">
+  <i class="fas fa-credit-card"></i> Proceed to Payment
+</button>
+
+
+</div>
+
+
+</div>
+
+<!-- linking the javascript file  -->
+
+  <script src="index/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+<script>
+  AOS.init({
+    duration: 1000,   // animation duration in ms
+    once: false,       // animate only once (set false if you want it every time)
+    offset: 100,      // triggers 100px before element enters viewport
+    easing: 'ease-in-out' // optional smooth animation
+  });
+</script>
+
+<script src="cart/cart.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reserve a Table | Delicious Bistro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="reservation.css">
+ 
+</head>
+<body>
+  <header>
+  <nav class="navbar">
+     <h2>Delicious Bistro</h2>
+
+
+    <!-- Search Input -->
+    <div class="search-container">
+      <input type="search" id="searchInput" placeholder="Search food..." />
+      <button onclick="searchFood()">🔍</button>
+    </div>
+
+  
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"  class="nav-link">Home</a></li>
+        <li><a href="#about"  class="nav-link">About</a></li>
+        <li><a href="#chefs"  class="nav-link">Chefs</a></li>
+        <li><a href="#menu"  class="nav-link">Menu</a></li>
+        <li><a href="#gallery"  class="nav-link">Gallery</a></li>
+        <li><a href="reservation.html"  class="nav-link">Reserve</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li>  <a href="#" id="cart-toggle"  class="nav-link">🛒 Cart</a></li>
+
+    </ul>
+   
+  </nav>
+</header>
+
+  <div class="reservation-container">
+    <h2>Reserve Your Table</h2>
+    <form id="reservationForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Reservation Date</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="fromTime">From Time</label>
+        <input type="time" id="fromTime" required />
+      </div>
+
+      <div class="form-group">
+        <label for="toTime">To Time</label>
+        <input type="time" id="toTime" required />
+      </div>
+
+      <div class="form-group">
+        <label for="persons">Number of Persons</label>
+        <select id="persons" required>
+          <option value="">Select</option>
+          <option>1 Person</option>
+          <option>2 Persons</option>
+          <option>3 Persons</option>
+          <option>4 Persons</option>
+          <option>5+ Group</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="floor">Select Floor</label>
+        <select id="floor" required>
+          <option value="">Select</option>
+          <option>Ground Floor</option>
+          <option>First Floor</option>
+          <option>Rooftop</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Choose Dining Preference</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="ac" value="AC" required> AC Dining</label>
+          <label><input type="radio" name="ac" value="NON-AC"> NON-AC Dining</label>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Select Preferred Dishes</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="food" value="Pizza"> Pizza</label>
+          <label><input type="checkbox" name="food" value="Pasta"> Pasta</label>
+          <label><input type="checkbox" name="food" value="Sushi"> Sushi</label>
+          <label><input type="checkbox" name="food" value="Steak"> Steak</label>
+          <label><input type="checkbox" name="food" value="Biryani"> Biryani</label>
+          <label><input type="checkbox" name="food" value="Dessert"> Dessert</label>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" placeholder="Add any additional notes..."></textarea>
+      </div>
+
+      <button type="submit">Confirm Reservation</button>
+    </form>
+  </div>
+ <!-- for map view  -->
+<div class="map-container video-bg-section">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="https://media.istockphoto.com/id/2211838998/video/cooking-staff-working-on-different-tasks-at-the-restaurants-kitchen.mp4?b=1&s=192_srp&k=20&c=wNaUkNXdQmZdnESNNXqQtCPRqE7LbfcBBW5xbmOgvCg=" type="video/mp4" />
+    <!-- Optional fallback -->
+
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="map-overlay-content">
+    <h3>Find Us Here</h3>
+    <div id="customMap">
+       <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.8453061453585!2d-122.08424978469258!3d37.42206597982526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7304bd74c1b%3A0x5a61193f2c0e6c67!2sGoogleplex!5e0!3m2!1sen!2sus!4v1657020146595!5m2!1sen!2sus"
+    width="100%"
+    height="400"
+    style="border:0; border-radius: 12px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+    </div> <!-- or your iframe map -->
+  </div>
+</div>
+
+<!-- <div class="map-container">
+  <h3>Find Us Here</h3>
+  <div id="customMap"></div>
+</div> -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>Delicious Bistro</h3>
+        <p>Experience gourmet meals crafted with passion and served with elegance. Join us for unforgettable dining.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#chefs">Chefs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reserve">Reserve</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+        <p><i class="fas fa-envelope"></i> contact@deliciousbistro.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Cityville</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Delicious Bistro. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<!-- linking the java script file  -->
+<script src="script.js"></script>
+</body>
+</html>

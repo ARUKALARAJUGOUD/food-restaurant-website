@@ -1,0 +1,121 @@
+
+*{
+    margin: 0;
+    padding: 0;box-sizing: border-box;
+}
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+   justify-content: space-between; 
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+
+}
+
+.cart-item img {
+  width: 70px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.remove-btn,
+.quantity-btn {
+  padding: 5px 8px;
+  margin: 0 5px;
+  background: #ffa500;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* to toogle slide the when you click cart btn  */
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -5500px; /* Initially hidden */
+  width: 550px;
+  max-width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: right 900ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.cart-drawer.active {
+  right: 0; /* Slide in */
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.close-btn {
+  background: transparent;
+  font-size: 34px;
+  border: none;
+  cursor: pointer;
+}
+
+#itemName{
+  color: rgb(80, 79, 79);
+  max-width: 150px;
+}
+
+.cart-summary {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+}
+.cart-summary p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 25px;
+    color: #e56007;
+    font-weight: 600;
+    border-bottom: 1px solid gray;
+
+}
+.cart-summary p span{
+    font-weight: 600;
+    color: #000000;
+}
+/* Cart Badge */
+.cart-badge {
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 7px;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 600px) {
+  .cart-drawer {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cart-item{
+    gap: 10px 90px;
+  }
+}
