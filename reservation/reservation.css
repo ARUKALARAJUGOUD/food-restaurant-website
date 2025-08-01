@@ -296,7 +296,7 @@ button:hover {
 }
 .video-bg-section {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   padding: 60px 20px;
   overflow: hidden;
